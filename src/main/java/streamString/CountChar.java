@@ -99,7 +99,8 @@ public class CountChar {
         System.out.println("max repeated char==>" + c);
 
 
-        String repeatedCharWor = IntStream.range(0, strEvenln.length()).mapToObj(s -> new StringBuilder(String.valueOf(strEvenln.charAt(s)))
+        String repeatedCharWor = IntStream.range(0, strEvenln.length()).
+                mapToObj(s -> new StringBuilder(String.valueOf(strEvenln.charAt(s)))
                         .append(strEvenln.charAt(s)))
                 .collect(Collectors.joining());
         System.out.println(repeatedCharWor);

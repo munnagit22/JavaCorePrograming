@@ -1,7 +1,10 @@
 package streamString;
 
 import java.util.Arrays;
+import java.util.List;
 import java.util.stream.Collectors;
+import java.util.stream.IntStream;
+import java.util.stream.Stream;
 
 public class StringManipulation {
     public static void main(String[] args) {
@@ -28,6 +31,22 @@ public class StringManipulation {
 
         boolean b = secondStr.chars().mapToObj(c -> String.valueOf((char) c)).allMatch(firstStr::contains);
         System.out.println("is Second string exist in first String==>"+b);
+
+
+        // remove the duplicate char and print the string
+        String str="capgemini";
+        //first way
+        str.chars().distinct().mapToObj(c -> String.valueOf((char) c)).
+                forEach(System.out::print);
+       // second way
+        String finalStr = str.chars().distinct().mapToObj(c -> String.valueOf((char) c))
+                .collect(Collectors.joining(""));
+
+        System.out.println("After removing duplicate char==>"+finalStr);
+
+        // merge two list of array
+
+
 
 
     }
